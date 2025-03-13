@@ -1,4 +1,4 @@
-const movies = [
+export const movies = [
   {
     "Title": "Patton Oswalt: Annihilation",
     "fulltitle": "Patton Oswalt: Annihilation (2017)",
@@ -48971,5 +48971,3 @@ const movies = [
     "ytid": "n9ukI7khQpE"
   }
 ];
-
-export default movies;
