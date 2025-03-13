@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+section {
+    background-color: #2A2A2A;
+    padding-bottom: 40px;
+}
+
+.section2 {
+    background-color: #303030;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-top: 24px;
+}
+
+.logo {
+    margin: 0 auto;
+    margin-bottom: 40px;
+    display: block;
+}
+
+#form {
+    margin: 0px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 35%;
+}
+
+#form_input {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+.select {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+.select_two {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+#button {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #D9534F;
+    color: white;
+}
+
+.section_list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    row-gap: 20px;
+}
+
+.section_item {
+    width: 18%;
+    background-color: #1b1b1b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.item_h2 {
+    font-weight: 700;
+    font-size: 18.7px;
+    line-height: 100%;
+    text-align: center;
+    color: white;
+    margin-bottom: 11px;
+}
+
+.item_p1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    margin-bottom: 11px;
+}
+
+.p1_span {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: white;
+}
+
+.item_p1_2 {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.item_btn {
+    padding: 10px;
+    background-color: #5CB85C;
+    color: white;
+    border-radius: 7px;
+    border: none;
+}
