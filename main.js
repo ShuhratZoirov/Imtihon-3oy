@@ -1,72 +1,65 @@
-import { movies } from "./movies.js";
+import movies from "./movies.js"
 
+const movieList = document.querySelector(".movie_list");
+const movieName = document.querySelector("#movie_name");
+const searchBtn = document.querySelector(".search_btn");
+const sortedElement = document.querySelector("#sort");
 
-const movieList = document.querySelector(".section_list");
-const nameInput = document.querySelector("#form_input");
-const sortedElement = document.querySelector(".select_two");
-const searchBtn = document.querySelector("#button");
+function showMovie(arr) {
+    movieList.innerHTML = arr.map(item =>
+        `
+        <li class="movie_item">
+                        <img src="./images/1200x675mf.jpg.png" alt="" class="movie_img">
 
+                        <h2 class="name">${item.fulltitle}</h2>
+                        
+                        <div class="info_wrap">
+                              <p>${item.imdb_rating}</p>
+                              <p>${item.movie_year}</p>
+                              <p>${parseInt(item.runtime / 60)} hr ${item.runtime % 60} min</p>
+                        </div>
 
+                        <p class="cattegory">
+                              Adventure Animation Comedy
+                        </p>
 
-
-function showMovies(arr) {
-    movieList.innerHTML = arr.map(movie => `
-        <li class="section_item">
-            <img src="${movie.ImageURL}" class="item_img">
-            <h2 class="item_h2">${movie.Title}</h2>
-            <p class="item_p1">
-                <span class="p1_span">${movie.imdb_rating}</span>
-                <span class="p1_span">${movie.movie_year}</span>
-                <span class="p1_span">${movie.runtime}</span>
-            </p>
-            <p class="item_summary">${movie.Categories}</p>
-            <button class="item_btn">More Info</button>
-        </li>
-    `).join("");
+                        <button class="info">
+                              More info
+                        </button>
+                  </li>
+        `
+    ).join("")
 }
 
 searchBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    let filteredArr = pokemons.filter(item =>
-        item.name.toLowerCase().includes(nameInput.value.trim().toLowerCase())
-    );
-    showMovies(filteredArr);
-});
 
+    let filteredArr = movies.filter(item => item.fulltitle.includes(movieName.value.trim()));
 
-function searchMovies() {
-    let searchText = nameInput.value.trim().toLowerCase();
-    let filteredMovies = movies.filter(movie =>
-        movie.Title.toLowerCase().includes(searchText)
-    );
+    showMovie(filteredArr)
+})
 
-    showMovies(filteredMovies);
-}
+movieName.addEventListener("input", (e) => {
+    e.preventDefault();
 
+    if(e.target.value == "") {
+        showMovie(movies)
+    }
+})
 
 sortedElement.addEventListener("change", (e) => {
     e.preventDefault();
-    let sortedMovies = [...movies];
 
-    if (e.target.value === "az") {
-        sortedMovies.sort((a, b) => a.title.localeCompare(b.title));
-    } else if (e.target.value === "za") {
-        sortedMovies.sort((a, b) => b.title.localeCompare(a.title));
-    } else if (e.target.value === "rating") {
-        sortedMovies.sort((a, b) => b.imdb_rating - a.imdb_rating);
-    } else if (e.target.value === "year") {
-        sortedMovies.sort((a, b) => b.movie_year - a.movie_year);
+    if(e.target.value == "az") {
+        let newAz = movies.sort((a, b) => a.fulltitle.localeCompare(b.fulltitle))
+        showMovie(newAz)
+    } else if (e.target.value == "za") {
+        let newAz = movies.sort((a, b) => a.fulltitle.localeCompare(b.fulltitle)).reverse()
+        showMovie(newAz)
+    } else if (e.target.value == "year") {
+        let rty = movies.sort((a, b) => a.movie_year - b.movie_year)
+        showMovie(rty)
     }
+})
 
-    showMovies(sortedMovies);
-});
-
-
-searchBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    searchMovies();
-});
-
-nameInput.addEventListener("input", () => searchMovies());
-
-showMovies(movies);
+showMovie(movies)

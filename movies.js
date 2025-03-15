@@ -48971,3 +48971,5 @@ export const movies = [
     "ytid": "n9ukI7khQpE"
   }
 ];
+
+export default movies;

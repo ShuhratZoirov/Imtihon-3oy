@@ -7,30 +7,32 @@
     <title>Movies</title>
 </head>
 <body>
+
     <section>
         <div class="container">
-            <img src="./images/MOVIES!.png" alt="logo" class="logo">
 
-            <form id="form">
-                <input type="text" id="form_input" placeholder="Enter your movie name">
-                <select class="select_two">
-                    <option value="az">A-Z</option>
-                    <option value="za">Z-A</option>
-                    <option value="rating">By Rating</option>
-                    <option value="year">By Year</option>
-                </select>
-                <button id="button">Search</button>
-            </form>
+            <img src="./images/MOVIES!.png" alt="" class="logo">
+
+            <form action="" class="form"> 
+ 
+                <input type="text" id="movie_name" placeholder="Enter your movie name"> 
+     
+                <select name="" id="sort"> 
+                    <option value="az">A-Z</option> 
+                    <option value="za">Z-A</option> 
+                    <option value="year">Year</option> 
+                </select> 
+     
+                <button class="search_btn">Search</button> 
+            </form> 
+     
+            <ul class="movie_list"> 
+                 
+            </ul>
         </div>
     </section>
 
-    <section class="section2">
-        <div class="container">
-            <ul class="section_list"></ul>
-        </div>
-    </section>
-
-    <script src="./movies.js"></script>
     <script type="module" src="./main.js"></script>
+    <script src="./movies.js"></script>
 </body>
 </html>
